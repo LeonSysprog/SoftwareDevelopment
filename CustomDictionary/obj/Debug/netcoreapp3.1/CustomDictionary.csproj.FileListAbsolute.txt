@@ -1,0 +1,13 @@
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\obj\Debug\netcoreapp3.1\CustomDictionary.csprojAssemblyReference.cache
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\obj\Debug\netcoreapp3.1\CustomDictionary.AssemblyInfoInputs.cache
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\obj\Debug\netcoreapp3.1\CustomDictionary.AssemblyInfo.cs
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\obj\Debug\netcoreapp3.1\CustomDictionary.csproj.CoreCompileInputs.cache
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\bin\Debug\netcoreapp3.1\CustomDictionary.exe
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\bin\Debug\netcoreapp3.1\CustomDictionary.deps.json
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\bin\Debug\netcoreapp3.1\CustomDictionary.runtimeconfig.json
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\bin\Debug\netcoreapp3.1\CustomDictionary.runtimeconfig.dev.json
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\bin\Debug\netcoreapp3.1\CustomDictionary.dll
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\bin\Debug\netcoreapp3.1\CustomDictionary.pdb
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\obj\Debug\netcoreapp3.1\CustomDictionary.dll
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\obj\Debug\netcoreapp3.1\CustomDictionary.pdb
+C:\Users\Leonid\source\repos\CustomDictionary\CustomDictionary\obj\Debug\netcoreapp3.1\CustomDictionary.genruntimeconfig.cache
