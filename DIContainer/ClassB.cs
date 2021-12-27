@@ -20,6 +20,7 @@ namespace DIContainer
             Console.WriteLine("Construct B with IA");
             ia.WriteA();
         }
+
         public void WriteB() => Console.WriteLine("Class B");
     }
 }

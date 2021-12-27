@@ -8,13 +8,28 @@ namespace DIContainer
     public class DIContainer
     {
         private Dictionary<Type, Func<object>> registrations;
+        private Dictionary<Type, int> color;
+
+        private bool acycle(Type implementationType)
+        {
+            color[implementationType] = 1;   //grey
+
+            foreach (var record in registrations)
+            {
+                if (color[record.Key] == 2) //white
+                    acycle(record.Key);
+                if (color[record.Key] == 1)
+                    return false;
+            }
+
+            color[implementationType] = 3;   //black
+            return true;
+        }
 
         private object CreateInstance(Type implementationType)
         {
-            if (new StackTrace().FrameCount > 100)
-            {
-                throw new Exception("CreateInstance: circular references");
-            }
+            if (!acycle(implementationType))
+                throw new Exception("Circle reference");
 
             var ctors = implementationType.GetConstructors();
             foreach (var ctor in ctors)
@@ -25,22 +40,32 @@ namespace DIContainer
                     return Activator.CreateInstance(implementationType, dependencies);
             }
 
-            throw new Exception("Not instance");
+            return Activator.CreateInstance(implementationType, null);
         }
 
         public DIContainer()
         {
             registrations = new Dictionary<Type, Func<object>>();
+            color = new Dictionary<Type, int>();
         }
 
-        public void AddTransient<TService, TImplementation>() where TImplementation : TService =>
+        public void AddTransient<TService, TImplementation>() where TImplementation : TService
+        {
             registrations.Add(typeof(TService), () => this.Get(typeof(TImplementation)));
+            color.Add(typeof(TService), 0);
+        }
 
-        public void AddTransient<TService>(Func<TService> func) =>
+        public void AddTransient<TService>(Func<TService> func)
+        {
             registrations.Add(typeof(TService), () => func());
+            color.Add(typeof(TService), 0);
+        }
 
-        public void AddTransientInstance<TService>(TService instance) =>
+        public void AddTransientInstance<TService>(TService instance)
+        {
             registrations.Add(typeof(TService), () => instance);
+            color.Add(typeof(TService), 0);
+        }
 
         public void AddSingleton<TService>(Func<TService> func)
         {

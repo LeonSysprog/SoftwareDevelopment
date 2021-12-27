@@ -9,7 +9,7 @@ namespace DIContainer
             DIContainer di = new DIContainer();
             di.AddTransient<IA, A>();
             di.AddTransient<IB, B>();
-            var instance = di.Get(typeof(IA));
+            var instance = di.Get(typeof(IB));
         }
     }
 }
